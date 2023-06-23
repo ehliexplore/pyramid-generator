@@ -1,8 +1,15 @@
-
 function getInputValue() {
-  let inputNumber = document.querySelector(".js-input").value;
+  let input = document.querySelector(".js-input").value;
 
-  generatePyramid(inputNumber);
+  if (!isNaN(input)) {
+
+    let inputNumber = parseInt(input);
+    generatePyramid(inputNumber);
+  } else {
+    
+    alert("Please enter a valid number.")
+  }
+
 
   function generatePyramid(layers) {
     let pyramidHTML = '';
